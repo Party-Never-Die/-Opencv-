@@ -7,7 +7,7 @@ using namespace std;
 using namespace cv;
 int main ( int argc, char **argv )
 {
-    argv[1]="/home/hehe/Desktop/1.jpg";
+    argv[1]="/home/hehe/Desktop/1.jpg";//对应图片为原始图，重命名即可
     // 读取argv[1]指定的图像
     cv::Mat image;
     image= cv::imread ( argv[1] ); //cv::imread函数读取指定路径下的图像
