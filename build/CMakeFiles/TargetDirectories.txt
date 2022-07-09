@@ -1,0 +1,3 @@
+/home/hehe/projects/fushi/build/CMakeFiles/rebuild_cache.dir
+/home/hehe/projects/fushi/build/CMakeFiles/main.dir
+/home/hehe/projects/fushi/build/CMakeFiles/edit_cache.dir
