@@ -78,11 +78,17 @@ int main ( int argc, char **argv )
     //element形状唯一依赖锚点位置，其他情况下，锚点只是影响了形态学运算结果的偏移。
     //element也是腐蚀操作的内核。 如果不指定，默认为一个简单的 3x3 矩阵
     cv::Mat element = getStructuringElement(MORPH_RECT, Size(15, 15));
-	cv::Mat dstimage;
-	cv::erode(image, dstimage, element);
-	//显示效果图 
-	cv::imshow("腐蚀", dstimage);
-	cv::waitKey(0);
+    cv::Mat dstimage;
+    cv::erode(image, dstimage, element);
+    //显示效果图 
+    cv::imshow("腐蚀", dstimage);
+    cv::waitKey(0);
+    cv::imshow("膨胀", dstimage);
+    cv::waitKey(0);
+    cv::Mat gray;
+    cv::cvtColor(image,gray,cv::COLOR_BGR2GRAY);
+    cv::imshow("gray",gray);
+    cv::waitKey(0);
     //Sobel边缘检测；
     //void Sobel( InputArray src, OutputArray dst, int ddepth,
     //int dx, int dy, int ksize = 3,
