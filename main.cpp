@@ -105,20 +105,20 @@ int main ( int argc, char **argv )
     //double类型的delta，表示在结果存入目标图之前可选的delta值，默认为0。
     //int类型的borderType，边界模式。
     Mat src =cv::imread ( argv[1] );
-	Mat gradx, grady, absgradx, absgrady, result;
-	// X方向梯度
-	Sobel(src, gradx, CV_16S, 1, 0, 3, 1, 1, BORDER_DEFAULT);
-	convertScaleAbs(gradx, absgradx);
-	// Y方向梯度
-	Sobel(src, grady, CV_16S, 0, 1, 3, 1, 1, BORDER_DEFAULT);
-	convertScaleAbs(grady, absgrady);
-	// 梯度相加
-	addWeighted(absgradx, 0.5, absgrady, 0.5, 0, result);
-	// 结果显示
-	imshow("原始图", src);
-	imshow("X方向梯度", absgradx);
-	imshow("Y方向梯度", absgrady);
-	imshow("整体方向梯度", result);
-	waitKey(0);
+    Mat gradx, grady, absgradx, absgrady, result;
+    // X方向梯度
+    Sobel(src, gradx, CV_16S, 1, 0, 3, 1, 1, BORDER_DEFAULT);
+    convertScaleAbs(gradx, absgradx);
+    // Y方向梯度
+    Sobel(src, grady, CV_16S, 0, 1, 3, 1, 1, BORDER_DEFAULT);
+    convertScaleAbs(grady, absgrady);
+    // 梯度相加
+    addWeighted(absgradx, 0.5, absgrady, 0.5, 0, result);
+    // 结果显示
+    imshow("原始图", src);
+    imshow("X方向梯度", absgradx);
+    imshow("Y方向梯度", absgrady);
+    imshow("整体方向梯度", result);
+    waitKey(0);
     return 0;
 }
